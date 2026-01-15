@@ -45,7 +45,10 @@ export const getGalleryCategories = (): GalleryCategory[] => {
   for (const slug of categoryOrder) {
     const categoryPath = path.join(galleryDirectory, slug);
 
-    if (fs.existsSync(categoryPath) && fs.statSync(categoryPath).isDirectory()) {
+    if (
+      fs.existsSync(categoryPath) &&
+      fs.statSync(categoryPath).isDirectory()
+    ) {
       const files = fs.readdirSync(categoryPath);
 
       const images = files

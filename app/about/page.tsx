@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-
 import { ContactCta } from "../components/contact-cta";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
@@ -19,7 +18,7 @@ export default function AboutPage() {
         <section className="bg-slate-50 py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <p className="text-sm font-medium uppercase tracking-widest text-slate-500">
+              <p className="text-sm font-medium tracking-widest text-slate-500 uppercase">
                 About Us
               </p>
 

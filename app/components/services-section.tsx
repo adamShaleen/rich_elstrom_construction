@@ -92,7 +92,7 @@ export const ServicesSection = () => {
     <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-slate-500">
+          <p className="text-sm font-medium tracking-widest text-slate-500 uppercase">
             What We Do
           </p>
 

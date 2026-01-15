@@ -410,14 +410,11 @@ const Button = ({ children, variant = "primary" }: ButtonProps) => {
 ```typescript
 import { type ReactNode } from "react";
 import Image from "next/image";
-
-import { getProjects } from "@/lib/projects";
 import { Button } from "@/components/ui/button";
-
+import { getProjects } from "@/lib/projects";
+import type { Project } from "@/types/project";
 import { ProjectCard } from "./project-card";
 import { ProjectHeader } from "./project-header";
-
-import type { Project } from "@/types/project";
 ```
 
 ## Error Handling

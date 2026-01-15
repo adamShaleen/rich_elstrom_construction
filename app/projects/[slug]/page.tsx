@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
 import { ContactCta } from "../../components/contact-cta";
 import { Footer } from "../../components/footer";
 import { Header } from "../../components/header";
@@ -75,7 +74,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 Back to Projects
               </Link>
 
-              <p className="mt-6 text-sm font-medium uppercase tracking-widest text-slate-500">
+              <p className="mt-6 text-sm font-medium tracking-widest text-slate-500 uppercase">
                 {project.category}
               </p>
 

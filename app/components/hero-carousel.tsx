@@ -1,8 +1,7 @@
 "use client";
 
-import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -67,7 +66,7 @@ export const HeroCarousel = () => {
               <div className="absolute inset-0 bg-black/40" />
 
               <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-white">
-                <p className="mb-4 text-sm font-medium uppercase tracking-widest text-white/80">
+                <p className="mb-4 text-sm font-medium tracking-widest text-white/80 uppercase">
                   {slide.subtitle}
                 </p>
 
