@@ -43,7 +43,7 @@ const statusLabels: Record<MilestoneStatus, string> = {
 
 export const ProjectMilestones = ({ milestones }: ProjectMilestonesProps) => {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-6">
+    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white p-4 sm:p-6">
       <h2 className="text-lg font-semibold text-slate-900">
         Project Milestones
       </h2>

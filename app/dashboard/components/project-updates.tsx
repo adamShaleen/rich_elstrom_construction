@@ -8,7 +8,7 @@ interface ProjectUpdatesProps {
 
 export const ProjectUpdates = ({ updates }: ProjectUpdatesProps) => {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-6">
+    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white p-4 sm:p-6">
       <h2 className="text-lg font-semibold text-slate-900">Recent Updates</h2>
 
       <div className="mt-6 space-y-6">

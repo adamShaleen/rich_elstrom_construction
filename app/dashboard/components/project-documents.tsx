@@ -54,7 +54,7 @@ export const ProjectDocuments = ({ documents }: ProjectDocumentsProps) => {
   );
 
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-6">
+    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white p-4 sm:p-6">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-slate-900">Documents</h2>
         <span className="text-sm text-slate-500">
@@ -74,20 +74,25 @@ export const ProjectDocuments = ({ documents }: ProjectDocumentsProps) => {
                 <a
                   key={doc.id}
                   href={doc.url}
-                  className="flex items-center gap-4 rounded-lg border border-slate-100 p-4 transition-colors hover:border-slate-200 hover:bg-slate-50"
+                  className="flex items-start gap-3 rounded-lg border border-slate-100 p-3 transition-colors hover:border-slate-200 hover:bg-slate-50 sm:items-center sm:gap-4 sm:p-4"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-100">
                     <FileText className="h-5 w-5 text-slate-600" />
                   </div>
 
                   <div className="min-w-0 flex-1">
-                    <p className="font-medium text-slate-900">{doc.name}</p>
-                    <p className="mt-0.5 truncate text-sm text-slate-500">
+                    <p className="truncate text-sm font-medium text-slate-900 sm:text-base">
+                      {doc.name}
+                    </p>
+                    <p className="mt-0.5 truncate text-xs text-slate-500 sm:text-sm">
                       {doc.description}
+                    </p>
+                    <p className="mt-1.5 text-xs text-slate-400 sm:hidden">
+                      {formatFileSize(doc.fileSize)} • {formatDate(doc.uploadedAt)}
                     </p>
                   </div>
 
-                  <div className="hidden flex-col items-end gap-1 sm:flex">
+                  <div className="hidden shrink-0 flex-col items-end gap-1 sm:flex">
                     <span
                       className={`rounded-full px-2 py-0.5 text-xs font-medium ${categoryColors[doc.category]}`}
                     >
@@ -99,7 +104,7 @@ export const ProjectDocuments = ({ documents }: ProjectDocumentsProps) => {
                     </span>
                   </div>
 
-                  <Download className="h-5 w-5 text-slate-400" />
+                  <Download className="h-5 w-5 shrink-0 text-slate-400" />
                 </a>
               ))}
             </div>

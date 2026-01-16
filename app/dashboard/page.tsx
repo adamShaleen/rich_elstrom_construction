@@ -29,15 +29,15 @@ const DashboardPage = async () => {
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <Link
             href="/"
-            className="text-xl font-semibold tracking-tight text-slate-900"
+            className="text-lg font-semibold tracking-tight text-slate-900 sm:text-xl"
           >
             Rich Elstrom Construction
           </Link>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-between gap-4 sm:justify-end">
             <span className="text-sm text-slate-600">
               Welcome, {session.name}
             </span>
@@ -47,7 +47,7 @@ const DashboardPage = async () => {
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-6 py-8">
+      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
         <div className="mb-8">
           <h1 className="text-2xl font-semibold text-slate-900">
             Client Dashboard
@@ -61,14 +61,22 @@ const DashboardPage = async () => {
           <div className="space-y-8">
             <ProjectOverview project={currentProject} />
 
-            <div className="grid gap-8 lg:grid-cols-2">
-              <ProjectMilestones milestones={currentProject.milestones} />
-              <ProjectUpdates updates={currentProject.recentUpdates} />
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+              <div className="min-w-0">
+                <ProjectMilestones milestones={currentProject.milestones} />
+              </div>
+              <div className="min-w-0">
+                <ProjectUpdates updates={currentProject.recentUpdates} />
+              </div>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-2">
-              <ProjectDocuments documents={currentProject.documents} />
-              <ProjectPhotos photos={currentProject.photos} />
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+              <div className="min-w-0">
+                <ProjectDocuments documents={currentProject.documents} />
+              </div>
+              <div className="min-w-0">
+                <ProjectPhotos photos={currentProject.photos} />
+              </div>
             </div>
           </div>
         ) : (

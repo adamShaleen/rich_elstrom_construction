@@ -44,7 +44,7 @@ export const ProjectPhotos = ({ photos }: ProjectPhotosProps) => {
     selectedIndex !== null ? sortedPhotos[selectedIndex] : null;
 
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-6">
+    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white p-4 sm:p-6">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-slate-900">Photo Gallery</h2>
         <span className="text-sm text-slate-500">
@@ -86,7 +86,7 @@ export const ProjectPhotos = ({ photos }: ProjectPhotosProps) => {
         >
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+            className="absolute top-3 right-3 z-10 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 sm:top-4 sm:right-4 sm:p-2"
             aria-label="Close"
           >
             <X className="h-6 w-6" />
@@ -97,7 +97,7 @@ export const ProjectPhotos = ({ photos }: ProjectPhotosProps) => {
               e.stopPropagation();
               goToPrevious();
             }}
-            className="absolute left-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+            className="absolute bottom-24 left-4 z-10 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 sm:top-1/2 sm:bottom-auto sm:left-4 sm:-translate-y-1/2 sm:p-2"
             aria-label="Previous photo"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -108,14 +108,14 @@ export const ProjectPhotos = ({ photos }: ProjectPhotosProps) => {
               e.stopPropagation();
               goToNext();
             }}
-            className="absolute right-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+            className="absolute right-4 bottom-24 z-10 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 sm:top-1/2 sm:bottom-auto sm:right-4 sm:-translate-y-1/2 sm:p-2"
             aria-label="Next photo"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
 
           <div
-            className="relative max-h-[80vh] max-w-[90vw]"
+            className="relative max-h-[70vh] max-w-[95vw] sm:max-h-[80vh] sm:max-w-[90vw]"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -123,19 +123,21 @@ export const ProjectPhotos = ({ photos }: ProjectPhotosProps) => {
               alt={selectedPhoto.caption}
               width={1200}
               height={800}
-              className="max-h-[80vh] w-auto rounded-lg object-contain"
+              className="max-h-[70vh] w-auto rounded-lg object-contain sm:max-h-[80vh]"
             />
 
-            <div className="absolute right-0 bottom-0 left-0 rounded-b-lg bg-gradient-to-t from-black/80 to-transparent p-4">
-              <p className="text-white">{selectedPhoto.caption}</p>
-              <p className="mt-1 text-sm text-white/70">
+            <div className="absolute right-0 bottom-0 left-0 rounded-b-lg bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4">
+              <p className="text-sm text-white sm:text-base">
+                {selectedPhoto.caption}
+              </p>
+              <p className="mt-1 text-xs text-white/70 sm:text-sm">
                 {formatPhase(selectedPhoto.phase)} •{" "}
                 {formatDate(selectedPhoto.takenAt)}
               </p>
             </div>
           </div>
 
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/60">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-white/60 sm:text-sm">
             {selectedIndex !== null && selectedIndex + 1} of{" "}
             {sortedPhotos.length}
           </div>

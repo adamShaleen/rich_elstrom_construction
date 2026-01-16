@@ -12,19 +12,21 @@ interface ProjectOverviewProps {
 
 export const ProjectOverview = ({ project }: ProjectOverviewProps) => {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-6">
-      <div className="flex items-start justify-between">
-        <div>
-          <h2 className="text-xl font-semibold text-slate-900">
+    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white p-4 sm:p-6">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0 flex-1">
+          <h2 className="text-lg font-semibold text-slate-900 sm:text-xl">
             {project.name}
           </h2>
           <p className="mt-1 flex items-center gap-1.5 text-sm text-slate-600">
-            <MapPin className="h-4 w-4" />
-            {project.address}, {project.city}, {project.state}
+            <MapPin className="h-4 w-4 shrink-0" />
+            <span className="break-words">
+              {project.address}, {project.city}, {project.state}
+            </span>
           </p>
         </div>
 
-        <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
+        <span className="w-fit shrink-0 rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
           {formatPhase(project.currentPhase)}
         </span>
       </div>
@@ -100,24 +102,24 @@ export const ProjectOverview = ({ project }: ProjectOverviewProps) => {
       <div className="mt-6 border-t border-slate-100 pt-6">
         <h3 className="text-sm font-medium text-slate-900">Project Manager</h3>
 
-        <div className="mt-3 flex flex-wrap gap-4">
+        <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
           <div className="flex items-center gap-2 text-sm text-slate-600">
-            <User className="h-4 w-4" />
-            {project.projectManager}
+            <User className="h-4 w-4 shrink-0" />
+            <span>{project.projectManager}</span>
           </div>
           <a
             href={`tel:${project.projectManagerPhone}`}
             className="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900"
           >
-            <Phone className="h-4 w-4" />
-            {project.projectManagerPhone}
+            <Phone className="h-4 w-4 shrink-0" />
+            <span>{project.projectManagerPhone}</span>
           </a>
           <a
             href={`mailto:${project.projectManagerEmail}`}
-            className="flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900"
+            className="flex min-w-0 items-center gap-2 text-sm text-slate-600 hover:text-slate-900"
           >
-            <Mail className="h-4 w-4" />
-            {project.projectManagerEmail}
+            <Mail className="h-4 w-4 shrink-0" />
+            <span className="truncate">{project.projectManagerEmail}</span>
           </a>
         </div>
       </div>
